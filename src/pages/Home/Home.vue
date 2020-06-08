@@ -2,6 +2,7 @@
   <div class="home">
     <home-header></home-header>
     <home-swiper :list="swiperList"></home-swiper>
+    <home-icons :list="iconList"></home-icons>
     {{home}}
   </div>
 </template>
@@ -9,16 +10,19 @@
 <script>
 import HomeHeader from '../components/Header'
 import HomeSwiper from '../components/Swiper'
+import HomeIcons from '../components/icons'
 export default {
   name: 'home',
   components: {
     HomeHeader,
-    HomeSwiper
+    HomeSwiper,
+    HomeIcons
   },
   data () {
     return {
       home: 'home',
-      swiperList: [] // 轮播图数据
+      swiperList: [], // 轮播图数据
+      iconList: [] // 图标数据
     }
   },
   mounted () {
@@ -33,6 +37,7 @@ export default {
       if (res.ret && res.data) {
         let data = res.data
         this.swiperList = data.swiperList
+        this.iconList = data.iconList
       }
     }
   }
