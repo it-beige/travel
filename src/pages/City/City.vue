@@ -7,6 +7,10 @@
       :hot="hotCities"
       :letter="letter"
     ></city-list>
+    <city-alphabet
+      :cities="cities"
+      @change="handleLetterChange"
+    ></city-alphabet>
   </div>
 </template>
 
@@ -14,12 +18,14 @@
 import CityHeader from './components/Header'
 import CitySearch from './components/search'
 import CityList from './components/list'
+import CityAlphabet from './components/Alphabet'
 export default {
   name: 'city',
   components: {
     CityHeader,
     CitySearch,
-    CityList
+    CityList,
+    CityAlphabet
   },
   data () {
     return {
@@ -42,6 +48,9 @@ export default {
         this.cities = data.cities
         this.hotCities = data.hotCities
       }
+    },
+    handleLetterChange (letter) {
+      this.letter = letter
     }
   }
 }
