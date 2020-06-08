@@ -29,7 +29,7 @@ export default {
   display: flex
   justify-content: space-between
   line-height .86rem
-  background-color #00bcd4
+  background-color $bgColor
   color: #fff
   .header-left
     width: .64rem
