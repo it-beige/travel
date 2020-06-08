@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import fastClick from 'fastclick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-import VueLazyLoad from 'vue-lazyload' // 实现懒加载的插件
+import 'babel-polyfill'
 import axios from 'axios'
 import VueAxios from 'vue-axios' // 将axios挂在到vue实现的插件
 import './utlis/http'
@@ -17,9 +17,6 @@ import 'swiper/css/swiper.css'
 Vue.config.productionTip = false
 fastClick.attach(document.body)
 Vue.use(VueAwesomeSwiper)
-Vue.use(VueLazyLoad, { // 使用懒加载插件
-  loading: './assets/imgs/loading-svg/loading-bars.svg' // 懒加载的路径
-})
 Vue.use(VueAxios, axios) // 使用中间件将axios挂在到vue实现
 
 /* eslint-disable no-new */
