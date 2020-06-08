@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
-    <swiper :options="swiperOptions">
-    <swiper-slide v-for="item in list" :key="item.id">
+    <swiper :options="swiperOptions" v-if="showSwiper">
+    <swiper-slide v-for="item of list" :key="item.id">
       <img class="slide-img" :src="item.imgUrl">
     </swiper-slide>
     <div class="swiper-pagination" slot="pagination"></div>
@@ -23,12 +23,9 @@ export default {
       }
     }
   },
-  mounted () {
-
-  },
-  methods: {
-    getSlideList () {
-      this.axios.get('/api/index.json')
+  computed: {
+    showSwiper () {
+      return this.list.length
     }
   }
 }
