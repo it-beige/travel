@@ -17,15 +17,11 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'homeHeader',
-  props: {
-    city: {
-      type: String
-    }
-  },
-  data () {
-    return {}
+  computed: {
+    ...mapState(['city'])
   }
 }
 </script>
