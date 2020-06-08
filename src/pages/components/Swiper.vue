@@ -18,7 +18,8 @@ export default {
   data () {
     return {
       swiperOptions: {
-        pagination: '.swiper-pagination'
+        pagination: '.swiper-pagination',
+        loop: true
       }
     }
   },
