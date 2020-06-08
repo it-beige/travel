@@ -4,6 +4,7 @@
     <home-swiper :list="swiperList"></home-swiper>
     <home-icons :list="iconList"></home-icons>
     <home-recommend :list="recommendList"></home-recommend>
+    <home-weekend :list="weekendList"></home-weekend>
   </div>
 </template>
 
@@ -12,19 +13,22 @@ import HomeHeader from '../components/Header'
 import HomeSwiper from '../components/Swiper'
 import HomeIcons from '../components/icons'
 import HomeRecommend from '../components/recommend'
+import HomeWeekend from '../components/weekend'
 export default {
   name: 'home',
   components: {
     HomeHeader,
     HomeSwiper,
     HomeIcons,
-    HomeRecommend
+    HomeRecommend,
+    HomeWeekend
   },
   data () {
     return {
       swiperList: [], // 轮播图数据
       iconList: [], // 图标数据
-      recommendList: [] // 推荐模块数据
+      recommendList: [], // 推荐模块数据
+      weekendList: [] // 周末去哪儿玩模块数据
     }
   },
   mounted () {
@@ -41,6 +45,7 @@ export default {
         this.swiperList = data.swiperList
         this.iconList = data.iconList
         this.recommendList = data.recommendList
+        this.weekendList = data.weekendList
       }
     }
   }
