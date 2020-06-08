@@ -7,16 +7,23 @@
       <input placeholder="输入/城市/景点/游玩主题" />
       <span class="iconfont search-icon">&#xe651;</span>
     </div>
-    <div class="header-right">
-      <span>城市</span>
-      <span class="iconfont arrow-icon">&#xe64a;</span>
-    </div>
+    <router-link to="/city">
+      <div class="header-right">
+        <span>{{this.city}}</span>
+        <span class="iconfont arrow-icon">&#xe64a;</span>
+      </div>
+    </router-link>
   </div>
 </template>
 
 <script>
 export default {
   name: 'homeHeader',
+  props: {
+    city: {
+      type: String
+    }
+  },
   data () {
     return {}
   }
@@ -55,6 +62,7 @@ export default {
   .header-right
     width 1.24rem
     text-align: center
+    color: #fff
     .arrow-icon
       font-size: .24rem
       margin-top: 0.02rem

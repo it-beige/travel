@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <home-header></home-header>
+    <home-header :city="city"></home-header>
     <home-swiper :list="swiperList"></home-swiper>
     <home-icons :list="iconList"></home-icons>
     <home-recommend :list="recommendList"></home-recommend>
@@ -9,11 +9,11 @@
 </template>
 
 <script>
-import HomeHeader from '../components/Header'
-import HomeSwiper from '../components/Swiper'
-import HomeIcons from '../components/icons'
-import HomeRecommend from '../components/recommend'
-import HomeWeekend from '../components/weekend'
+import HomeHeader from './components/Header'
+import HomeSwiper from './components/Swiper'
+import HomeIcons from './components/icons'
+import HomeRecommend from './components/recommend'
+import HomeWeekend from './components/weekend'
 export default {
   name: 'home',
   components: {
@@ -25,6 +25,7 @@ export default {
   },
   data () {
     return {
+      city: '南昌',
       swiperList: [], // 轮播图数据
       iconList: [], // 图标数据
       recommendList: [], // 推荐模块数据
